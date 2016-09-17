@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_card_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="17dp">
+
+
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:horizontalSpacing="2dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="2dp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_above="@id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/blur_small" />
+
+        <ImageView
+            android:id="@+id/add_card_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="#80000000" />
+
+        <RelativeLayout
+            android:id="@+id/add_card_before_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <man.membership.com.membershipman.font.NotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="55dp"
+                android:text="Card name"
+                android:textColor="#fff"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/add_card_title_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="80dp"
+                android:maxLength="10"
+                android:background="#30ffffff"
+                android:imeOptions="actionNext"
+                android:lines="1"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="#fff"
+                android:textSize="25dp" />
+
+
+            <man.membership.com.membershipman.font.NotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_card_title_edit_text"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="20dp"
+                android:text="Card barcode number"
+                android:textColor="#fff"
+                android:textSize="20dp" />
+
+
+            <EditText
+                android:id="@+id/add_card_barcode_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_card_title_edit_text"
+                android:layout_centerHorizontal="true"
+                android:maxLength="20"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="45dp"
+                android:background="#30ffffff"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:lines="1"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="#fff"
+                android:textSize="25dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="30dp"
+                android:orientation="horizontal">
+
+
+                <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="#00ffffff"
+                    app:riv_border_color="#aaffffff"
+                    app:riv_border_width="2dp"
+                    app:riv_corner_radius="2dp"
+                    app:riv_mutate_background="true"
+                    app:riv_oval="false" />
+
+                <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="#00ffffff"
+                    app:riv_border_color="#aaffffff"
+                    app:riv_border_width="2dp"
+                    app:riv_corner_radius="2dp"
+                    app:riv_mutate_background="true"
+                    app:riv_oval="false" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="30dp"
+                android:orientation="horizontal">
+
+
+                <net.steamcrafted.materialiconlib.MaterialIconView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#00ffffff"
+                    android:scaleType="center"
+                    app:materialIcon="close"
+                    app:materialIconColor="#aaffffff"
+                    app:materialIconSize="40dp" />
+
+                <net.steamcrafted.materialiconlib.MaterialIconView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#00ffffff"
+                    android:scaleType="center"
+                    app:materialIcon="auto_fix"
+                    app:materialIconColor="#aaffffff"
+                    app:materialIconSize="40dp" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/add_card_button_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="30dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/add_card_close_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#00ffffff" />
+
+                <Button
+                    android:id="@+id/add_card_add_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#00ffffff" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/add_card_button_layout"
+                android:layout_below="@id/add_card_barcode_edit_text"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="50dp"
+                android:background="#00ffffff">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_centerInParent="true"
+                    android:background="#fff"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:id="@+id/add_card_barcode_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:background="#fff"
+                    android:scaleType="fitXY" />
+
+
+                <man.membership.com.membershipman.font.NotoTextView
+                    android:id="@+id/add_card_barcode_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_card_barcode_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:ellipsize="end"
+                    android:singleLine = "true"
+                    android:lines="1"
+                    android:text=""
+                    android:textColor="#000"
+                    android:textSize="20dp" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/add_card_after_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+
+            <man.membership.com.membershipman.font.NotoTextView
+                android:id="@+id/add_card_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="100dp"
+                android:text="아모레퍼시픽"
+                android:textColor="#fff"
+                android:textSize="40dp" />
+
+            <ImageView
+                android:id="@+id/main_card_bar"
+                android:layout_width="30dp"
+                android:layout_height="3dp"
+                android:layout_below="@id/add_card_title_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:src="#fff" />
+
+            <ImageView
+                android:id="@+id/add_card_barcode"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="50dp"
+                android:scaleType="fitXY" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="30dp"
+                android:orientation="horizontal">
+
+
+                <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="#00ffffff"
+                    app:riv_border_color="#aaffffff"
+                    app:riv_border_width="2dp"
+                    app:riv_corner_radius="2dp"
+                    app:riv_mutate_background="true"
+                    app:riv_oval="false" />
+
+
+                <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="#00ffffff"
+                    app:riv_border_color="#aaffffff"
+                    app:riv_border_width="2dp"
+                    app:riv_corner_radius="2dp"
+                    app:riv_mutate_background="true"
+                    app:riv_oval="false" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="30dp"
+                android:orientation="horizontal">
+
+
+                <net.steamcrafted.materialiconlib.MaterialIconView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#00ffffff"
+                    android:scaleType="center"
+                    app:materialIcon="close"
+                    app:materialIconColor="#aaffffff"
+                    app:materialIconSize="40dp" />
+
+                <net.steamcrafted.materialiconlib.MaterialIconView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#00ffffff"
+                    android:scaleType="center"
+                    app:materialIcon="auto_fix"
+                    app:materialIconColor="#aaffffff"
+                    app:materialIconSize="40dp" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/button_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="30dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/add_card_close_button2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#00ffffff" />
+
+                <Button
+                    android:id="@+id/add_card_add_button_final"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="#00ffffff" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

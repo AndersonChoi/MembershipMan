@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="man.membership.com.membershipman.MainActivity">
+
+
+
+    <ImageView
+        android:id="@+id/full_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/full_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:id="@+id/main_card_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:layout_margin="20dp"
+            android:id="@+id/main_card_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="#30ffffff" />
+
+
+        <ImageView
+            android:id="@+id/barcode_background"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:src="#b0ffffff" />
+
+        <ImageView
+            android:id="@+id/main_card_barcode"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:scaleType="fitXY" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/barcode_background"
+            android:layout_alignParentTop="true">
+
+
+            <man.membership.com.membershipman.font.NotoTextView
+                android:id="@+id/main_card_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="100dp"
+
+                android:ellipsize="end"
+                android:singleLine = "true"
+                android:lines="1"
+                android:text=""
+                android:textColor="#fff"
+                android:textSize="40dp" />
+
+            <ImageView
+                android:id="@+id/main_card_bar"
+                android:layout_width="30dp"
+                android:layout_height="3dp"
+                android:layout_below="@id/main_card_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:src="#fff" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/barcode_background"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1">
+
+                <net.steamcrafted.materialiconlib.MaterialIconView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="#00ffffff"
+                    android:scaleType="center"
+                    app:materialIcon="credit_card_multiple"
+                    app:materialIconColor="#ffffff"
+                    app:materialIconSize="30dp" />
+
+                <Button
+                    android:id="@+id/mini_light"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#00ffffff" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/logo_inside"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:text="Membership Man"
+            android:textColor="#fff"
+            android:textSize="50dp"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+
+    <me.crosswall.lib.coverflow.core.PagerContainer
+        android:id="@+id/pager_container"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:background="#34485D"
+        android:elevation="10dp">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="200dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center" />
+
+
+    </me.crosswall.lib.coverflow.core.PagerContainer>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_above="@id/pager_container"
+        android:elevation="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/triangle" />
+
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/multiple_actions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/pager_container"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:elevation="15dp"
+        fab:fab_addButtonColorNormal="@color/white"
+        fab:fab_addButtonColorPressed="@color/white_pressed"
+        fab:fab_addButtonPlusIconColor="@color/half_black"
+        fab:fab_labelStyle="@style/menu_labels_style">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_share_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/white"
+            fab:fab_colorPressed="@color/white_pressed"
+            fab:fab_icon="@drawable/share"
+            fab:fab_title="Share card" />
+
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_add_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/white"
+            fab:fab_colorPressed="@color/white_pressed"
+            fab:fab_icon="@drawable/download"
+            fab:fab_title="Add card" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_edit_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            fab:fab_colorNormal="@color/white"
+            fab:fab_colorPressed="@color/white_pressed"
+            fab:fab_icon="@drawable/shuffle"
+            fab:fab_title="Edit card" />
+
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/action_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            fab:fab_colorNormal="@color/white"
+            fab:fab_colorPressed="@color/white_pressed"
+            fab:fab_icon="@drawable/settings"
+            fab:fab_title="More" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    <RelativeLayout
+        android:id="@+id/full_barcode_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="15dp"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/full_barcode_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#90000000" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_centerInParent="true"
+            android:background="#ffffff"
+            android:elevation="15dp" />
+
+        <ImageView
+            android:id="@+id/full_barcode_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_centerInParent="true"
+            android:elevation="16dp"
+            android:scaleType="fitXY" />
+
+        <man.membership.com.membershipman.font.NotoTextView
+            android:id="@+id/main_card_barcode_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/full_barcode_image_view"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:singleLine = "true"
+            android:elevation="16dp"
+            android:lines="1"
+            android:text="124124124214214124"
+            android:textColor="#000"
+            android:textSize="20dp" />
+
+
+
+    </RelativeLayout>
+
+
+
+    <!-- this is first layout for tutorial-->
+    <RelativeLayout
+        android:id="@+id/firstTimeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:elevation="16dp">
+
+
+        <ImageView
+            android:id="@+id/start_logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_margin="80dp"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_launcher" />
+
+
+        <ImageView
+            android:id="@+id/middle_line"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true"
+            android:visibility="invisible" />
+
+
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/middle_line"
+            android:background="#00ffffff" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/middle_line">
+
+
+            <ImageView
+                android:id="@+id/middle_line2"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:layout_centerInParent="true"
+                android:visibility="invisible" />
+
+            <com.hanks.htextview.HTextView xmlns:htext="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/logo_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/middle_line2"
+                android:background="#00ffffff"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="17dp"
+                htext:animateType="line" />
+
+
+            <net.steamcrafted.materialiconlib.MaterialIconView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#00ffffff"
+                android:scaleType="center"
+                android:visibility="gone"
+                android:id="@+id/arrow_image"
+                android:layout_centerHorizontal="true"
+                app:materialIcon="arrow_right_bold_circle_outline"
+                app:materialIconColor="#000"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+                app:materialIconSize="30dp" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/first_card_add_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/middle_line"
+            android:background="#fff"
+            android:visibility="gone">
+
+            <man.membership.com.membershipman.font.NotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:text="Card name"
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/add_first_card_edit_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="20dp"
+                android:background="#00000000"
+                android:imeOptions="actionNext"
+                android:lines="1"
+                android:maxLength="10"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textSize="25dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/add_first_card_edit_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:src="#000" />
+
+
+            <man.membership.com.membershipman.font.NotoTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_first_card_edit_title"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="20dp"
+                android:text="Card barcode number"
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+
+            <EditText
+                android:id="@+id/add_first_card_edit_number"
+                android:maxLength="20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_first_card_edit_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="40dp"
+                android:background="#00000000"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:lines="1"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textSize="25dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/add_first_card_edit_number"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:src="#000" />
+
+            <Button
+                android:id="@+id/start_add_card_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/add_first_card_edit_number"
+                android:background="#00ffffff" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/add_first_card_edit_number">
+
+
+                <com.hanks.htextview.HTextView xmlns:htext="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/logo_text2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:background="#00ffffff"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="17dp"
+                    htext:animateType="line" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/last_card_add_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000"
+            android:visibility="gone">
+
+
+            <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/gridview2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_alignParentBottom="true"
+                android:horizontalSpacing="2dp"
+                android:numColumns="3"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="2dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/gridview2">
+
+                <Button
+                    android:id="@+id/final_add_first_card_button"
+                    android:background="#00ffffff"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:id="@+id/last_card_add_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="#30ffffff" />
+
+                <ImageView
+                    android:id="@+id/barcode_background_first_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:src="#50ffffff" />
+
+                <ImageView
+                    android:id="@+id/main_card_barcode_first_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:scaleType="fitXY" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@id/barcode_background_first_time"
+                    android:layout_alignParentTop="true">
+
+
+                    <man.membership.com.membershipman.font.NotoTextView
+                        android:id="@+id/main_card_title_first_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="100dp"
+                        android:ellipsize="end"
+                        android:singleLine = "true"
+                        android:lines="1"
+                        android:text=""
+                        android:textColor="#fff"
+                        android:textSize="40dp" />
+
+                    <ImageView
+                        android:id="@+id/main_card_bar_first_time"
+                        android:layout_width="30dp"
+                        android:layout_height="3dp"
+                        android:layout_below="@id/main_card_title_first_time"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30dp"
+                        android:src="#fff" />
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/barcode_background_first_time">
+
+
+                    <com.hanks.htextview.HTextView xmlns:htext="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/logo_text3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="#00ffffff"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="#ffffff"
+                        android:textSize="17dp"
+                        htext:animateType="line" />
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

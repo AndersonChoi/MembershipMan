@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="man.membership.com.membershipman">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:largeHeap="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".CardAddActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".SettingActivity"
+            android:screenOrientation="portrait"
+            />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="21d1cb57a0a0dcd3f450d438fab8e923fa630dd1" />
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+</manifest>
